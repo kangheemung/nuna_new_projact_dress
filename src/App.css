@@ -33,7 +33,7 @@ justify-content: center;
   margin-left: 5px;
 }
 .search_box {
-  position: absolute;
+position: absolute;
   right: 0;
 margin-right: 20px; /* Push search box to the right */
 }
