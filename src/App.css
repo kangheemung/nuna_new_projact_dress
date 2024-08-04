@@ -11,34 +11,45 @@
 }
 .logeline
 {
-display: flex;
-
+  display: flex;
+  justify-content: center;
 }
 .top_contain{
   display: flex;
+justify-content: center;
+  align-items: center;
+}
+.manu_Box{
+  display: flex;
+}
+.manu-list {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  font-size: 24px;
+  font-weight: bolder;
+}
+.search_input{
+  margin-left: 5px;
+}
+.search_box {
+  position: absolute;
+  right: 0;
+margin-right: 20px; /* Push search box to the right */
+}
+.search_input {
+height: 30px;
+width: 200px;
+border: none;
+box-shadow: 5px 5px 10px rgba(15, 39, 255, 0.4);
+border-bottom: 5px solid rgb(0, 75, 41); /* Set bot /* Remove default focus outline */
 }
 .manu_Box{
   display: flex;
   justify-content: center;
 }
-.manu-list{
-  display: flex;
-  list-style-type: none;
-  font-size: 24px;
-  font-weight:bolder;
-}
-.search_input{
-    margin: 5px;
-}
-.search_box{
-  display: flex;
-  justify-content: flex-end;
-  margin :20px;
-}
-
 .search_icon {
-margin-top: 1px;
-font-size: 20px;
+    margin-right: 5px;
 }
 
 .manu-list li

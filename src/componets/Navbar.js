@@ -9,26 +9,26 @@ const Navbar = () => {
     const MenuList = ['Make', 'play', 'study'];
     return (
         <div>
-            <div className="login_button">
-                <FaRegUser />
-                <div>login</div>
+            <div>
+                <div className="login_button">
+                    <FaRegUser />
+                    <div>login</div>
+                </div>
             </div>
-
             <div className="logeline">
                 <img className="loge" src={handImage} alt="Hand Image" />
                 DRING
             </div>
-<div className="top_contain">
-<div className="manu_Box">
-                    <ul className="manu-list">
-                        {MenuList.map((manu) => (
-                            <li>{manu}</li>
-                        ))}
-                    </ul>
-                </div>
+            <div className="top_contain">
+                <ul className="manu-list">
+                    {MenuList.map((manu) => (
+                        <li>{manu}</li>
+                    ))}
+                </ul>
+
                 <div className="search_box">
                     <FaSearch className="search_icon" />
-                    <input className="search_input" type="text" />
+                    <input className="search_input" placeholder="Search..." type="text" />
                 </div>
             </div>
         </div>
