@@ -1,3 +1,47 @@
 .App{
+  height: 100vh;
+}
+.login_button{
+  display: flex;
+  justify-content: flex-end;
+  margin :20px;
+}
+.loge {
+  width: 100px;
+}
+.logeline
+{
+display: flex;
 
+}
+.top_contain{
+  display: flex;
+}
+.manu_Box{
+  display: flex;
+  justify-content: center;
+}
+.manu-list{
+  display: flex;
+  list-style-type: none;
+  font-size: 24px;
+  font-weight:bolder;
+}
+.search_input{
+    margin: 5px;
+}
+.search_box{
+  display: flex;
+  justify-content: flex-end;
+  margin :20px;
+}
+
+.search_icon {
+margin-top: 1px;
+font-size: 20px;
+}
+
+.manu-list li
+{
+  padding: 10px;
 }

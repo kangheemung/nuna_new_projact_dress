@@ -6,8 +6,7 @@ import ProductDetailPage from './componets/ProductDetailPage';
 import ProductAll from './page/ProductAll';
 import Login from './page/Login';
 import Navbar from './componets/Navbar';
-
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { fauser } from '@fortawesome/free-solid-svg-icons';
 function App() {
     //로직
     //1.페이지,로그인,상품상세페이지
