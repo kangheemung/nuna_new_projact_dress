@@ -1,9 +1,10 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './componets/HomePage';
 import LoginPage from './componets/LoginPage';
 import ProductDetailPage from './componets/ProductDetailPage';
-import ProductAll from './page/ProductAll';
+import ProductAll from './componets/ProductAll';
 import Login from './page/Login';
 import Navbar from './componets/Navbar';
 import { fauser } from '@fortawesome/free-solid-svg-icons';
@@ -27,6 +28,7 @@ function App() {
                     <Route path="/" element={<HomePage />} />
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/product/:id" element={<ProductDetailPage />} />
+                    <Route path="/products" element={<ProductAll />} />
                 </Routes>
             </BrowserRouter>
         </div>

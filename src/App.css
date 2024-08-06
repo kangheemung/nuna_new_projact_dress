@@ -1,27 +1,33 @@
 .App{
   height: 100vh;
 }
+
 .login_button{
   display: flex;
   justify-content: flex-end;
   margin :20px;
 }
+
 .loge {
   width: 100px;
 }
+
 .logeline
 {
   display: flex;
   justify-content: center;
 }
+
 .top_contain{
   display: flex;
-justify-content: center;
+  justify-content: center;
   align-items: center;
 }
+
 .manu_Box{
   display: flex;
 }
+
 .manu-list {
   display: flex;
   justify-content: center;
@@ -29,25 +35,50 @@ justify-content: center;
   font-size: 24px;
   font-weight: bolder;
 }
+
 .search_input{
   margin-left: 5px;
 }
+
 .search_box {
-position: absolute;
+  position: absolute;
   right: 0;
-margin-right: 20px; /* Push search box to the right */
+  margin-right: 20px;
 }
+
 .search_input {
-height: 30px;
-width: 200px;
-border: none;
-box-shadow: 5px 5px 10px rgba(15, 39, 255, 0.4);
-border-bottom: 5px solid rgb(0, 75, 41); /* Set bot /* Remove default focus outline */
+  height: 30px;
+  width: 200px;
+  border-radius: 5%;
+  border: none;
+  box-shadow: 5px 5px 10px rgba(15, 39, 255, 0.4);
+  border-bottom: 5px solid rgb(0, 75, 41);
 }
+
 .manu_Box{
   display: flex;
   justify-content: center;
 }
+.product-card {
+text-align: center;
+
+}
+
+.img_dress {
+  transition: transform 0.2s; /* Add smooth transition effect */
+}
+
+.img_dress:hover {
+  transform: scale(1.1); /* Increase size by 10% on hover */
+}
+
+.products_contanse{
+display: flex;
+justify-content: center;}
+.small_search_box {
+  display: none;
+}
+.img_dress{width: 250px;}
 .search_icon {
     margin-right: 5px;
 }
@@ -56,3 +87,17 @@ border-bottom: 5px solid rgb(0, 75, 41); /* Set bot /* Remove default focus outl
 {
   padding: 10px;
 }
+
+@media screen and (max-width: 750px) {
+  .search_box{
+    display: none;
+  }
+
+.small_search_box {
+    position: absolute;
+    left: 0;
+    margin-left: 20px;
+    display: block;
+  }
+}
+
