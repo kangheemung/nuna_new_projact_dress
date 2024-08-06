@@ -2,9 +2,8 @@ import React from 'react';
 
 const ProductCard = ({ item }) => {
     return (
-        <div className="product-card">
+        <div className={item?.choice === true ? 'product-card' : 'product-card hidden'}>
             <img src={item?.img} className="img_dress"></img>
-            <div>{item?.choice === true ? '선택한 상품' : ''}</div>
             <div>{item?.title}</div>
             <div>${item?.price}</div>
             <div> {item?.new == true ? '신제품' : ''}</div>

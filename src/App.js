@@ -21,7 +21,7 @@ function App() {
     // 7.상품을 검색 할 수있다
     //로그이웃 되지
     return (
-        <div className="App">
+<div className="App">
             <Navbar />
             <BrowserRouter>
                 <Routes>
