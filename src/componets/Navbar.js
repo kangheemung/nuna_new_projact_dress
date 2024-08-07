@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useNavigate } from 'react-router-dom';
 import handImage from '../img/hand_700px.png';
 import { FaRegUser, FaSearch } from 'react-icons/fa';
 
 const Navbar = () => {
-    const MenuList = ['Make', 'play', 'study', 'Products'];
+const MenuList = ['Make', 'H', 'Sale', 'Products'];
     const [isSearchVisible, setSearchVisible] = useState(false);
     const toggleSearch = () => {
         setSearchVisible(!isSearchVisible);
     };
+    const navigate = useNavigate();
+    const goToLogin = () => {
+        navigate('/login');
+    };
     return (
         <div>
             <div>
-                <div className="login_button">
+                <div className="login_button " onClick={goToLogin}>
                     <FaRegUser className="login_icon" />
-                    <Link to="/login" className="login_link">
-                        login
-                    </Link>
+                    <div className="login_link">login</div>
                 </div>
             </div>
             <div className="logeline">
@@ -29,7 +32,7 @@ const Navbar = () => {
                     {MenuList.map((menu, index) => (
                         <li key={index}>
                             {menu === 'Products' ? (
-<Link to="/products" className="manu">
+                                <Link to="/products" className="manu">
                                     {menu}
                                 </Link>
                             ) : (

@@ -8,8 +8,10 @@ import ProductAll from './componets/ProductAll';
 import Login from './page/Login';
 import { FaIconName } from 'react-icons/fa';
 import Navbar from './componets/Navbar';
+import React, { useState } from 'react';
 import { fauser } from '@fortawesome/free-solid-svg-icons';
 function App() {
+    const [authenticate, setAuthenticate] = useState(false);
     //로직
     //1.페이지,로그인,상품상세페이지
     //1-1navigationbar
@@ -27,7 +29,7 @@ function App() {
                 <Navbar />
                 <Routes>
                     <Route path="/" element={<HomePage />} />
-                    <Route path="/login" element={<Login />} />
+                    <Route path="/login" element={<Login className="login_form" />} />
                     <Route path="/product/:id" element={<ProductDetailPage />} />
                     <Route path="/products" element={<ProductAll />} />
                 </Routes>
