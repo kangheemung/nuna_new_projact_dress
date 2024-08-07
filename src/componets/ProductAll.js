@@ -6,7 +6,7 @@ const ProductAll = () => {
     const [products, setProducts] = useState([]);
 
     const getProducts = async () => {
-        let url = `http://localhost:3001/products`;
+let url = 'http://localhost:3001/products';
         let response = await fetch(url);
         let jsonData = await response.json();
         console.log(jsonData);

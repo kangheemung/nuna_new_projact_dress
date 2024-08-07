@@ -8,16 +8,22 @@ import ProductAll from './componets/ProductAll';
 import Login from './page/Login';
 import { FaIconName } from 'react-icons/fa';
 import Navbar from './componets/Navbar';
-import React, { useState } from 'react';
+import PrivateRoute from './route/PrivateRoute';
+import React, { useState, useEffect } from 'react';
 import { fauser } from '@fortawesome/free-solid-svg-icons';
+
 function App() {
     const [authenticate, setAuthenticate] = useState(false);
+    useEffect(() => {
+        console.log('aaa', authenticate);
+    }, [authenticate]);
+
     //로직
     //1.페이지,로그인,상품상세페이지
     //1-1navigationbar
     //2.전체 상품페이지에서는 전체 상품을 볼수 있다.
     //3.로그인 버튼을 누르면 로그인 페이지가 나온다.
-    //3.상품데테일을 눌렀으나 로그인이 안되있을 경우에는 로그인페이지가 먼저 나온다.]
+    //3.상품데테일을 눌렀으나 로그인이 안되있을 경우에는 로그인페이지가 먼저 나온다.]ok
     //4.로그인이 되어있을경우에는 상품 디테일 페이지를 볼수 있다.
     //5.로그인을 하면 로그아웃이 보이고 로그아웃하면로그인이보인다
     //6.로그인을 하면 로그아웃이 보이고 로그인이 보인댜
@@ -28,10 +34,9 @@ function App() {
             <BrowserRouter>
                 <Navbar />
                 <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/login" element={<Login className="login_form" />} />
-                    <Route path="/product/:id" element={<ProductDetailPage />} />
-                    <Route path="/products" element={<ProductAll />} />
+                    <Route path="/" element={<ProductAll />} />
+                    <Route path="/login" element={<Login className="login_form" setAuthenticate={setAuthenticate} />} />
+                    <Route path="/product/:id" element={<PrivateRoute authenticate={authenticate} />} />
                 </Routes>
             </BrowserRouter>
         </div>

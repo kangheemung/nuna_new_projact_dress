@@ -6,7 +6,7 @@ import handImage from '../img/hand_700px.png';
 import { FaRegUser, FaSearch } from 'react-icons/fa';
 
 const Navbar = () => {
-const MenuList = ['Make', 'H', 'Sale', 'Products'];
+    const MenuList = ['Make', 'H', 'Sale', 'Products'];
     const [isSearchVisible, setSearchVisible] = useState(false);
     const toggleSearch = () => {
         setSearchVisible(!isSearchVisible);
@@ -32,7 +32,7 @@ const MenuList = ['Make', 'H', 'Sale', 'Products'];
                     {MenuList.map((menu, index) => (
                         <li key={index}>
                             {menu === 'Products' ? (
-                                <Link to="/products" className="manu">
+                                <Link to="/" className="manu">
                                     {menu}
                                 </Link>
                             ) : (
