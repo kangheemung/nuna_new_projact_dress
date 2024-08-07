@@ -14,7 +14,6 @@ const Navbar = () => {
             <div>
                 <div className="login_button">
                     <FaRegUser />
-                    <div>login</div>
                 </div>
             </div>
             <div className="logeline">
