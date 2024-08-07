@@ -6,6 +6,7 @@ import LoginPage from './componets/LoginPage';
 import ProductDetailPage from './componets/ProductDetailPage';
 import ProductAll from './componets/ProductAll';
 import Login from './page/Login';
+import { FaIconName } from 'react-icons/fa';
 import Navbar from './componets/Navbar';
 import { fauser } from '@fortawesome/free-solid-svg-icons';
 function App() {
@@ -21,12 +22,12 @@ function App() {
     // 7.상품을 검색 할 수있다
     //로그이웃 되지
     return (
-<div className="App">
-            <Navbar />
+        <div className="App">
             <BrowserRouter>
+                <Navbar />
                 <Routes>
                     <Route path="/" element={<HomePage />} />
-                    <Route path="/login" element={<LoginPage />} />
+                    <Route path="/login" element={<Login />} />
                     <Route path="/product/:id" element={<ProductDetailPage />} />
                     <Route path="/products" element={<ProductAll />} />
                 </Routes>

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 import handImage from '../img/hand_700px.png';
 import { FaRegUser, FaSearch } from 'react-icons/fa';
 
 const Navbar = () => {
-    const MenuList = ['Make', 'play', 'study'];
+    const MenuList = ['Make', 'play', 'study', 'Products'];
     const [isSearchVisible, setSearchVisible] = useState(false);
     const toggleSearch = () => {
         setSearchVisible(!isSearchVisible);
@@ -13,17 +14,28 @@ const Navbar = () => {
         <div>
             <div>
                 <div className="login_button">
-                    <FaRegUser />
+                    <FaRegUser className="login_icon" />
+                    <Link to="/login" className="login_link">
+                        login
+                    </Link>
                 </div>
             </div>
             <div className="logeline">
-                <img className="loge" src={handImage} alt="Hand Image" />
+                <img className="loge" src={handImage} alt="Hand Gesturing Sign of Communication" />
                 DRING
             </div>
             <div className="top_contain">
                 <ul className="manu-list">
-                    {MenuList.map((manu, index) => (
-                        <li key={index}>{manu}</li>
+                    {MenuList.map((menu, index) => (
+                        <li key={index}>
+                            {menu === 'Products' ? (
+<Link to="/products" className="manu">
+                                    {menu}
+                                </Link>
+                            ) : (
+                                menu
+                            )}
+                        </li>
                     ))}
                 </ul>
                 <div className="search_box">
