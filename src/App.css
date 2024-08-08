@@ -18,11 +18,18 @@
   display: flex;
   justify-content: center;
 }
-
+.detail_box{
+  display: flex;
+  justify-content: center;
+}
 .top_contain{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.detail_img{
+  display: flex;
+justify-content: flex-end;
 }
 .form_button{
   display: flex;
