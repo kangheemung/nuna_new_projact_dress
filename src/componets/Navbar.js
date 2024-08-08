@@ -8,12 +8,16 @@ import { FaRegUser, FaSearch } from 'react-icons/fa';
 const Navbar = () => {
     const MenuList = ['Make', 'H', 'Sale', 'Products'];
     const [isSearchVisible, setSearchVisible] = useState(false);
+    const [searchQuery, setSearchQuery] = useState('');
     const toggleSearch = () => {
         setSearchVisible(!isSearchVisible);
     };
     const navigate = useNavigate();
     const goToLogin = () => {
         navigate('/login');
+    };
+    const handleSearch = (e) => {
+        setSearchQuery(e.target.value);
     };
     return (
         <div>
@@ -43,11 +47,25 @@ const Navbar = () => {
                 </ul>
                 <div className="search_box">
                     <FaSearch className="search_icon" />
-                    <input className="search_input" placeholder="Search..." type="text" />
+                    <input
+                        className="search_input"
+                        placeholder="Search..."
+                        type="text"
+                        value={searchQuery}
+                        hange={handleSearch}
+                    />
                 </div>
                 <div className=" small_search_box ">
                     <FaSearch className="search_icon" onClick={toggleSearch} />
-                    {isSearchVisible && <input className="search_input" placeholder="Search..." type="text" />}
+                    {isSearchVisible && (
+                        <input
+                            className="search_input"
+                            placeholder="Search..."
+                            type="text"
+                            value={searchQuery}
+                            onChange={handleSearch}
+                        />
+                    )}
                 </div>
             </div>
         </div>

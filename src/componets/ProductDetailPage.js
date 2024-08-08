@@ -22,14 +22,14 @@ const ProductDetailPage = () => {
         <div className="detail_information">
             <Container>
                 <Row>
-                    <div className="detail_box">
+<div className="detail_box">
                         <Col md={6} className="order-md-1 detail_img">
                             <img className="detail_img_box" src={product?.img} />
                         </Col>
                         <Col md={6} className="order-md-2 detail_text">
                             <div clasName="detail_text_box">
-                                <div>{product?.title}</div>
-                                <div>${product?.price}</div>
+                                <div clasName="detail_text_font">{product?.title}</div>
+                                <div clasName="detail_text_font">${product?.price}</div>
 
                                 <Form.Select size="lg">
                                     <option> 사이즈 선택</option>
