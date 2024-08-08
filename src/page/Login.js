@@ -14,7 +14,7 @@ const Login = ({ setAuthenticate }) => {
     };
     return (
         <div className="form_container">
-            <Container>
+            <Container className="d-flex justify-content-center">
                 <Form className="form_size" onSubmit={(e) => loginUser(e)}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>

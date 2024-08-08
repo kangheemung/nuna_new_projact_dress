@@ -19,31 +19,35 @@ const ProductDetailPage = () => {
         getDetailPage();
     }, []);
     return (
-        <div>
+        <div className="detail_information">
             <Container>
                 <Row>
-                    <Col className="detail_img">
-                        <img src={product?.img} />
-                    </Col>
-                    <Col>
-                        <div>{product?.title}</div>
-                        <div>${product?.price}</div>
+                    <div className="detail_box">
+                        <Col md={6} className="order-md-1 detail_img">
+                            <img className="detail_img_box" src={product?.img} />
+                        </Col>
+                        <Col md={6} className="order-md-2 detail_text">
+                            <div clasName="detail_text_box">
+                                <div>{product?.title}</div>
+                                <div>${product?.price}</div>
 
-                        <Form.Select size="lg">
-                            <option> 사이즈 선택</option>
-                            <option>S</option>
-                            <option>M</option>
-                            <option>L</option>
-                        </Form.Select>
+                                <Form.Select size="lg">
+                                    <option> 사이즈 선택</option>
+                                    <option>S</option>
+                                    <option>M</option>
+                                    <option>L</option>
+                                </Form.Select>
 
-                        <div> {product?.new == true ? '신제품' : ''}</div>
+                                <div> {product?.new == true ? '신제품' : ''}</div>
 
-                        <div className="d-grid gap-2">
-                            <Button variant="success" size="lg">
-                                추가
-                            </Button>
-                        </div>
-                    </Col>
+                                <div className="d-grid gap-2">
+                                    <Button variant="dark" size="lg">
+                                        추가
+                                    </Button>
+                                </div>
+                            </div>
+                        </Col>
+                    </div>
                 </Row>
             </Container>
         </div>
