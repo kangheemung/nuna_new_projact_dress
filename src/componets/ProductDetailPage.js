@@ -22,7 +22,7 @@ const ProductDetailPage = () => {
         <div className="detail_information">
             <Container>
                 <Row>
-<div className="detail_box">
+                    <div className="detail_box">
                         <Col md={6} className="order-md-1 detail_img">
                             <img className="detail_img_box" src={product?.img} />
                         </Col>
@@ -38,7 +38,7 @@ const ProductDetailPage = () => {
                                     <option>L</option>
                                 </Form.Select>
 
-                                <div> {product?.new == true ? '신제품' : ''}</div>
+                                <div> {product?.new === true ? '신제품' : ''}</div>
 
                                 <div className="d-grid gap-2">
                                     <Button variant="dark" size="lg">

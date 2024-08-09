@@ -3,69 +3,70 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from 'react-router-dom';
 import handImage from '../img/hand_700px.png';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { FaRegUser, FaSearch } from 'react-icons/fa';
 
-const Navbar = () => {
-    const MenuList = ['Make', 'H', 'Sale', 'Products'];
+const Navbar = ({ authenticate, setAuthenticate }) => {
+    const MenuList = ['Make', 'H', 'Sale', '아동', 'Products'];
     const [isSearchVisible, setSearchVisible] = useState(false);
-    const [searchQuery, setSearchQuery] = useState('');
     const toggleSearch = () => {
         setSearchVisible(!isSearchVisible);
     };
     const navigate = useNavigate();
+
     const goToLogin = () => {
         navigate('/login');
     };
-    const handleSearch = (e) => {
-        setSearchQuery(e.target.value);
+
+    const search = (e) => {
+        if (e.key === 'Enter') {
+            let keyword = e.target.value;
+            console.log(keyword);
+            navigate(`?q=${keyword}`);
+        }
     };
     return (
         <div>
             <div>
-                <div className="login_button " onClick={goToLogin}>
-                    <FaRegUser className="login_icon" />
-                    <div className="login_link">login</div>
+                {authenticate ? (
+                    <div className="login_button " onClick={goToLogin}>
+                        <FaRegUser className="login_icon" />
+                        <div className="login_link">login</div>
+                    </div>
+                ) : (
+                    <div className="login_button " onClick={() => navigate('/login')}>
+                        <FontAwesomeIcon icon={faUser} />
+                        <span style={{ cursor: 'pointer' }}>로그아웃</span>
+                    </div>
+                )}
+                <div className="logeline">
+                    <img className="loge" src={handImage} alt="Hand Gesturing Sign of Communication" />
+                    DRING
                 </div>
-            </div>
-            <div className="logeline">
-                <img className="loge" src={handImage} alt="Hand Gesturing Sign of Communication" />
-                DRING
-            </div>
-            <div className="top_contain">
-                <ul className="manu-list">
-                    {MenuList.map((menu, index) => (
-                        <li key={index}>
-                            {menu === 'Products' ? (
-                                <Link to="/" className="manu">
-                                    {menu}
-                                </Link>
-                            ) : (
-                                menu
-                            )}
-                        </li>
-                    ))}
-                </ul>
-                <div className="search_box">
-                    <FaSearch className="search_icon" />
-                    <input
-                        className="search_input"
-                        placeholder="Search..."
-                        type="text"
-                        value={searchQuery}
-                        hange={handleSearch}
-                    />
-                </div>
-                <div className=" small_search_box ">
-                    <FaSearch className="search_icon" onClick={toggleSearch} />
-                    {isSearchVisible && (
-                        <input
-                            className="search_input"
-                            placeholder="Search..."
-                            type="text"
-                            value={searchQuery}
-                            onChange={handleSearch}
-                        />
-                    )}
+                <div className="top_contain">
+                    <ul className="manu-list">
+                        {MenuList.map((menu, index) => (
+                            <li key={index}>
+                                {menu === 'Products' ? (
+                                    <Link to="/" className="manu">
+                                        {menu}
+                                    </Link>
+                                ) : (
+                                    menu
+                                )}
+                            </li>
+                        ))}
+                    </ul>
+                    <div className="search_box">
+                        <FaSearch className="search_icon" />
+                        <input className="search_input" placeholder="Search..." type="text" onKeyPress={search} />
+                    </div>
+                    <div className=" small_search_box ">
+                        <FaSearch className="search_icon" onClick={toggleSearch} />
+                        {isSearchVisible && (
+                            <input className="search_input" placeholder="Search..." type="text" onKeyPress={search} />
+                        )}
+                    </div>
                 </div>
             </div>
         </div>
