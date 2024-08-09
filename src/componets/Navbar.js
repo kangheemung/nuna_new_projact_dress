@@ -14,10 +14,6 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
     };
     const navigate = useNavigate();
 
-    const goToLogin = () => {
-        navigate('/login');
-    };
-
     const search = (e) => {
         if (e.key === 'Enter') {
             let keyword = e.target.value;
@@ -25,22 +21,32 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
             navigate(`?q=${keyword}`);
         }
     };
+    const handleLogout = () => {
+        setAuthenticate(false);
+        navigate('/login');
+    };
+
     return (
         <div>
             <div>
                 {authenticate ? (
-                    <div className="login_button " onClick={goToLogin}>
-                        <FaRegUser className="login_icon" />
-                        <div className="login_link">login</div>
-                    </div>
-                ) : (
-                    <div className="login_button " onClick={() => navigate('/login')}>
+                    <div className="login_button" onClick={handleLogout}>
                         <FontAwesomeIcon icon={faUser} />
                         <span style={{ cursor: 'pointer' }}>로그아웃</span>
                     </div>
+                ) : (
+                    <div className="login_button" onClick={() => navigate('/login')}>
+                        <FontAwesomeIcon icon={faUser} />
+                        <span style={{ cursor: 'pointer' }}>로그인</span>
+                    </div>
                 )}
                 <div className="logeline">
-                    <img className="loge" src={handImage} alt="Hand Gesturing Sign of Communication" />
+                    <img
+                        className="loge"
+                        src={handImage}
+                        alt="Hand Gesturing Sign of Communication"
+                        onClick={() => navigate('/')}
+                    />
                     DRING
                 </div>
                 <div className="top_contain">

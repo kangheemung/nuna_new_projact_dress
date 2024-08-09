@@ -33,7 +33,7 @@ function App() {
     return (
         <div className="App">
             <BrowserRouter>
-                <Navbar />
+                <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate} />
                 <Routes>
                     <Route path="/" element={<ProductAll />} />
                     <Route path="/login" element={<Login className="login_form" setAuthenticate={setAuthenticate} />} />
