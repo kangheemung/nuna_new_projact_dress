@@ -5,14 +5,15 @@ import { useNavigate } from 'react-router-dom';
 import handImage from '../img/hand_700px.png';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { FaRegUser, FaSearch } from 'react-icons/fa';
-
+import hamburger from '../img/hamburger.png';
 const Navbar = ({ authenticate, setAuthenticate }) => {
     const MenuList = ['Make', 'H', 'Sale', '아동', 'Products'];
     const [isSearchVisible, setSearchVisible] = useState(false);
+    const [isSidebarOpen, setSidebarOpen] = useState(false);
+    const navigate = useNavigate();
     const toggleSearch = () => {
         setSearchVisible(!isSearchVisible);
     };
-    const navigate = useNavigate();
 
     const search = (e) => {
         if (e.key === 'Enter') {
@@ -20,6 +21,9 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
             console.log(keyword);
             navigate(`?q=${keyword}`);
         }
+    };
+    const toggleSidebar = () => {
+        setSidebarOpen(!isSidebarOpen);
     };
     const handleLogout = () => {
         setAuthenticate(false);
@@ -29,27 +33,22 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
     return (
         <div>
             <div>
-                {authenticate ? (
-                    <div className="login_button" onClick={handleLogout}>
-                        <FontAwesomeIcon icon={faUser} />
-                        <span style={{ cursor: 'pointer' }}>로그아웃</span>
-                    </div>
-                ) : (
-                    <div className="login_button" onClick={() => navigate('/login')}>
-                        <FontAwesomeIcon icon={faUser} />
-                        <span style={{ cursor: 'pointer' }}>로그인</span>
-                    </div>
-                )}
-                <div className="logeline">
-                    <img
-                        className="loge"
-                        src={handImage}
-                        alt="Hand Gesturing Sign of Communication"
-                        onClick={() => navigate('/')}
-                    />
-                    DRING
+                <div className="top_button">
+                    <img className="hamburger" src={hamburger} alt="hamburger" onClick={toggleSidebar} />
+                    {authenticate ? (
+                        <div className="login_button" onClick={handleLogout}>
+                            <FontAwesomeIcon icon={faUser} />
+                            <span style={{ cursor: 'pointer' }}>로그아웃</span>
+                        </div>
+                    ) : (
+                        <div className="login_button" onClick={() => navigate('/login')}>
+                            <FontAwesomeIcon icon={faUser} />
+                            <span style={{ cursor: 'pointer' }}>로그인</span>
+                        </div>
+                    )}
                 </div>
-                <div className="top_contain">
+
+                <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
                     <ul className="manu-list">
                         {MenuList.map((menu, index) => (
                             <li key={index}>
@@ -63,12 +62,27 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
                             </li>
                         ))}
                     </ul>
+                </div>
+                <div className="logeline">
+                    <img
+                        className="loge"
+                        src={handImage}
+                        alt="Hand Gesturing Sign of Communication"
+                        onClick={() => navigate('/')}
+                    />
+                    DRING
+                </div>
+                <div className="top_contain">
                     <div className="search_box">
                         <FaSearch className="search_icon" />
                         <input className="search_input" placeholder="Search..." type="text" onKeyPress={search} />
                     </div>
-                    <div className=" small_search_box ">
+                </div>
+                <div className=" small_search_box ">
+                    <div>
                         <FaSearch className="search_icon" onClick={toggleSearch} />
+                    </div>
+                    <div>
                         {isSearchVisible && (
                             <input className="search_input" placeholder="Search..." type="text" onKeyPress={search} />
                         )}
