@@ -23,13 +23,23 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
         }
     };
     const toggleSidebar = () => {
-        setSidebarOpen(!isSidebarOpen);
+        const sidebar = document.querySelector('.sidebar_box');
+        if (sidebar.style.display === 'none') {
+            sidebar.style.display = 'block';
+        } else {
+            sidebar.style.display = 'none';
+        }
     };
     const handleLogout = () => {
         setAuthenticate(false);
         navigate('/login');
     };
-
+    const closeSidebar = () => {
+        const sidebar = document.querySelector('.sidebar_box');
+        if (sidebar.style.display === 'block') {
+            sidebar.style.display = 'none';
+        }
+    };
     return (
         <div>
             <div>
@@ -47,8 +57,7 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
                         </div>
                     )}
                 </div>
-
-                <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
+                <div className="manu-list-containt">
                     <ul className="manu-list">
                         {MenuList.map((menu, index) => (
                             <li key={index}>
@@ -63,6 +72,27 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
                         ))}
                     </ul>
                 </div>
+
+                <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
+                    <ul className="sidebar_box">
+                        <div className="close_button" onClick={closeSidebar}>
+                            x
+                        </div>
+                        <div className="sidebar_text">
+                            {MenuList.map((menu, index) => (
+                                <ul key={index}>
+                                    {menu === 'Products' ? (
+                                        <Link to="/" className="login_link">
+                                            {menu}
+                                        </Link>
+                                    ) : (
+                                        menu
+                                    )}
+                                </ul>
+                            ))}
+                        </div>
+                    </ul>
+                </div>
                 <div className="logeline">
                     <img
                         className="loge"
@@ -74,18 +104,18 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
                 </div>
                 <div className="top_contain">
                     <div className="search_box">
-                        <FaSearch className="search_icon" />
-                        <input className="search_input" placeholder="Search..." type="text" onKeyPress={search} />
-                    </div>
-                </div>
-                <div className=" small_search_box ">
-                    <div>
                         <FaSearch className="search_icon" onClick={toggleSearch} />
-                    </div>
-                    <div>
                         {isSearchVisible && (
                             <input className="search_input" placeholder="Search..." type="text" onKeyPress={search} />
                         )}
+                    </div>
+                </div>
+                <div className="small_search_box">
+                    <div>
+                        <FaSearch className="search_icon" />
+                    </div>
+                    <div>
+                        <input className="search_input" placeholder="Search..." type="text" onKeyPress={search} />
                     </div>
                 </div>
             </div>

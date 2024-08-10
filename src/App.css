@@ -41,8 +41,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-text-align: center;
-margin-top: 1em;
+  text-align: center;
+  margin-top: 1em;
 }
 .col{
   padding: auto;
@@ -55,7 +55,7 @@ margin-top: 1em;
   padding: 20px;
 }
 .detail_information{
-margin-top:5px;
+  margin-top:5px;
 }
 .form_button{
   display: flex;
@@ -72,11 +72,10 @@ margin-top:5px;
   font-size: 24px;
   font-weight: bolder;
 }
-.search_input{
-  margin-left: 5px;
-  display: flex;
-  justify-content: center;
+.manu-list-containt{
+  display:block;
 }
+
 .form_container {
   display: flex;
   justify-content: center;
@@ -91,11 +90,14 @@ margin-top:5px;
 }
 .search_box {
   position: absolute;
-display: flex;
+  display: flex;
   right: 0;
   margin-right: 20px;
 }
 .search_input {
+  margin-left: 5px;
+  display: flex;
+  justify-content: center;
   height: 30px;
   width: 200px;
   border-radius: 5%;
@@ -103,28 +105,21 @@ display: flex;
   box-shadow: 5px 5px 10px rgba(15, 39, 255, 0.4);
   border-bottom: 5px solid rgb(0, 75, 41);
 }
-
 .manu_Box{
   display: flex;
   justify-content: center;
 }
-
 .product-card {
   margin-top: 30%;
   text-align: center;
 }
-
 .img_dress {
   transition: transform 0.2s; /* Add smooth transition effect */
 }
-
 .login_link{
-    color: inherit;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    margin-left: 5px;
-    margin-bottom: 8px;
+color: inherit;
+text-decoration: none;
+cursor: pointer;
 }
 .manu{
   color: inherit;
@@ -147,8 +142,7 @@ display: flex;
   display: none;
 }
 .img_dress{
-
-max-width: 300px;
+  max-width: 300px;
 }
 .search_icon {
   margin-right: 5px;
@@ -163,15 +157,57 @@ max-width: 300px;
   justify-content: center;
   text-align: center;
 }
-
   .hamburger{
-display: none;
+    display: none;
+  }
+  .sidebar_box{
+    display: none;
   }
 
 @media screen and (max-width: 950px) {
   .search_box{
     display: none;
   }
+.close_button{
+    display: flex;
+    font-size: 36px;
+    margin-top: 3px;
+    margin-right: 15px;
+    font-weight: bolder;
+    justify-content: flex-end;
+    color: white;
+}
+.sidebar_box{
+display: none;
+  color: inherit;
+  text-decoration: none;
+  background-color:yellowgreen;
+  width: 50%;
+  cursor: pointer;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.sidebar_text{
+text-align: right;
+margin-top: 3em;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: inherit;
+margin-right: 15px;
+  text-decoration: none;
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: Arial, Georgia, Times, "Times New Roman", serif;
+color: white;
+}
+  .manu-list-containt{
+display:none;
+    }
   .top_button{
     display: flex;
       justify-content: space-between;
@@ -200,13 +236,12 @@ margin-bottom: 10px;
 
 .hamburger{
     display: block;
-    width: 40px;
+    width: 35px;
     margin: 1em;
 }
 .small_search_box {
-    position: absolute;
-    left: 0;
-    margin-left: 20px;
+margin-top: 15px;
+justify-content: center;
     display:flex;
   }
 .detail_text_box{
