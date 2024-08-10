@@ -6,9 +6,11 @@ import handImage from '../img/hand_700px.png';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { FaRegUser, FaSearch } from 'react-icons/fa';
 import hamburger from '../img/hamburger.png';
+import { colors } from '@material-ui/core';
 const Navbar = ({ authenticate, setAuthenticate }) => {
     const MenuList = ['Make', 'H', 'Sale', '아동', 'Products'];
     const [isSearchVisible, setSearchVisible] = useState(false);
+
     const [isSidebarOpen, setSidebarOpen] = useState(false);
     const navigate = useNavigate();
     const toggleSearch = () => {
@@ -42,9 +44,10 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
     };
     return (
         <div>
-            <div>
+            <div className="top_container">
                 <div className="top_button">
                     <img className="hamburger" src={hamburger} alt="hamburger" onClick={toggleSidebar} />
+
                     {authenticate ? (
                         <div className="login_button" onClick={handleLogout}>
                             <FontAwesomeIcon icon={faUser} />
@@ -60,7 +63,7 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
                 <div className="manu-list-containt">
                     <ul className="manu-list">
                         {MenuList.map((menu, index) => (
-                            <li key={index}>
+<li key={index} className="menu-item">
                                 {menu === 'Products' ? (
                                     <Link to="/" className="manu">
                                         {menu}
@@ -104,7 +107,7 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
                 </div>
                 <div className="top_contain">
                     <div className="search_box">
-                        <FaSearch className="search_icon" onClick={toggleSearch} />
+                        <FaSearch className="search_icon" onClick={toggleSearch} size={28} />
                         {isSearchVisible && (
                             <input className="search_input" placeholder="Search..." type="text" onKeyPress={search} />
                         )}
@@ -112,7 +115,7 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
                 </div>
                 <div className="small_search_box">
                     <div>
-                        <FaSearch className="search_icon" />
+                        <FaSearch className="search_icon" size={40} />
                     </div>
                     <div>
                         <input className="search_input" placeholder="Search..." type="text" onKeyPress={search} />

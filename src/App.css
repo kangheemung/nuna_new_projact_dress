@@ -3,16 +3,26 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  font-family: Arial, Georgia, Times, "Times New Roman", serif;
+background-color: rgb(215, 250, 224);
 }
+
 .body {
   flex: 1; /* Allows the body to grow and fill the available space */
   display: flex;
   justify-content: flex-end; /* Aligns content to the bottom */
 }
+.top_container{
+background-color:#f1fff9;
+padding-bottom: 50px;
+}
+
 .login_button{
   display: flex;
   justify-content: flex-end;
-  margin :20px;
+margin :1em;
+padding-top: 1em;
+
 }
 .loge {
   width: 100px;
@@ -69,8 +79,27 @@
   display: flex;
   justify-content: center;
   list-style-type: none;
-  font-size: 24px;
-  font-weight: bolder;
+  font-size: 60px;
+  border-top: 20px solid  #fff;
+  border-bottom: 20px solid  #fff;
+  color:rgb(5, 61, 33);
+    font-weight: bolder;
+}
+.manu-list-containt .menu .manu-list .sidebar_text .menu-item .manu .login_link:hover {
+  color: red; /* Change color to whatever you prefer */
+}
+.menu-item {
+  color:rgb(5, 61, 33); /* Change color to whatever you prefer */
+}
+
+.menu-item:hover {
+  color: red; /* Change color to whatever you prefer */
+}
+.login_link:hover {
+  color: red; /* Change color to whatever you prefer */
+}
+.login_button:hover {
+  color: red; /* Change color to whatever you prefer */
 }
 .manu-list-containt{
   display:block;
@@ -98,12 +127,13 @@
   margin-left: 5px;
   display: flex;
   justify-content: center;
-  height: 30px;
-  width: 200px;
-  border-radius: 5%;
+height: 50px;
+width: 250px;
+border-radius: 15%;
   border: none;
-  box-shadow: 5px 5px 10px rgba(15, 39, 255, 0.4);
-  border-bottom: 5px solid rgb(0, 75, 41);
+background-color: #e3fef3;
+box-shadow: 5px 5px 10px #003f1e66;
+border-bottom: 5px solid  #00FA9A;
 }
 .manu_Box{
   display: flex;
@@ -145,7 +175,10 @@ cursor: pointer;
   max-width: 300px;
 }
 .search_icon {
-  margin-right: 5px;
+color: #00FA9A;
+
+margin-top: 5px;
+margin-right:18px ;
   cursor: pointer;
 }
 .manu-list li
@@ -181,7 +214,7 @@ cursor: pointer;
 display: none;
   color: inherit;
   text-decoration: none;
-  background-color:yellowgreen;
+background-color : #00FA9A;
   width: 50%;
   cursor: pointer;
   height: 100vh;
@@ -202,7 +235,7 @@ margin-right: 15px;
   font-size: 26px;
   font-weight: bold;
   cursor: pointer;
-  font-family: Arial, Georgia, Times, "Times New Roman", serif;
+
 color: white;
 }
   .manu-list-containt{
@@ -234,10 +267,11 @@ margin-bottom: 10px;
   text-align: center;
 }
 
-.hamburger{
-    display: block;
-    width: 35px;
-    margin: 1em;
+.hamburger {
+  display: block;
+  width: 35px;
+  margin: 1em;
+  filter: hue-rotate(140deg);
 }
 .small_search_box {
 margin-top: 15px;
