@@ -13,7 +13,7 @@ const ProductAll = () => {
         try {
             let keyword = query.get('q') || '';
             console.log('쿼리 값은?', keyword);
-            let url = `http://localhost:3001/products?q=${keyword}`;
+            let url = `https://my-json-server.typicode.com/kangheemung/nuna_new_projact_dress/products?q=${keyword}`;
             let response = await fetch(url);
             console.log('url', url);
             if (!response.ok) {

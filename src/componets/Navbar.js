@@ -50,20 +50,24 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
 
                     {authenticate ? (
                         <div className="login_button" onClick={handleLogout}>
-                            <FontAwesomeIcon icon={faUser} />
-                            <span style={{ cursor: 'pointer' }}>로그아웃</span>
+                            <FontAwesomeIcon icon={faUser} className="faUser" size={30} />
+                            <span className="login_text" style={{ cursor: 'pointer' }}>
+                                로그아웃
+                            </span>
                         </div>
                     ) : (
                         <div className="login_button" onClick={() => navigate('/login')}>
-                            <FontAwesomeIcon icon={faUser} />
-                            <span style={{ cursor: 'pointer' }}>로그인</span>
+                            <FontAwesomeIcon icon={faUser} className="faUser" size={30} />
+                            <span className="login_text" style={{ cursor: 'pointer' }}>
+                                로그인
+                            </span>
                         </div>
                     )}
                 </div>
                 <div className="manu-list-containt">
                     <ul className="manu-list">
                         {MenuList.map((menu, index) => (
-<li key={index} className="menu-item">
+                            <li key={index} className="menu-item">
                                 {menu === 'Products' ? (
                                     <Link to="/" className="manu">
                                         {menu}
@@ -96,6 +100,14 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
                         </div>
                     </ul>
                 </div>
+                <div className="small_search_box">
+                    <div>
+                        <FaSearch className="search_icon" size={40} />
+                    </div>
+                    <div>
+                        <input className="search_input" placeholder="Search..." type="text" onKeyPress={search} />
+                    </div>
+                </div>
                 <div className="logeline">
                     <img
                         className="loge"
@@ -111,14 +123,6 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
                         {isSearchVisible && (
                             <input className="search_input" placeholder="Search..." type="text" onKeyPress={search} />
                         )}
-                    </div>
-                </div>
-                <div className="small_search_box">
-                    <div>
-                        <FaSearch className="search_icon" size={40} />
-                    </div>
-                    <div>
-                        <input className="search_input" placeholder="Search..." type="text" onKeyPress={search} />
                     </div>
                 </div>
             </div>
