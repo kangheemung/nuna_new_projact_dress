@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Button, Container } from 'react-bootstrap'; // Removed redundant import for Container
-// import { Container } from '@material-ui/core'; // Remove or rename this line since it's already imported above
+
 import { useNavigate } from 'react-router-dom';
 //＜Form＞를 사용할때에는 이벤트를 사용해주세요.페이지가 계속 리플래쉬 하는걸 막아줄수 있다.
 //＜Form＞を使う時はEventをつかってください。

@@ -6,7 +6,7 @@ import handImage from '../img/hand_700px.png';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { FaRegUser, FaSearch } from 'react-icons/fa';
 import hamburger from '../img/hamburger.png';
-import { colors } from '@material-ui/core';
+
 const Navbar = ({ authenticate, setAuthenticate }) => {
     const MenuList = ['Make', 'H', 'Sale', '아동', 'Products'];
     const [isSearchVisible, setSearchVisible] = useState(false);
