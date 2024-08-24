@@ -37,10 +37,13 @@ const ProductAll = () => {
         <div>
             <div className="products_container">
                 <Container>
+                   
                     {error ? (
+                        
                         <Alert variant="danger" className="text-center">
                             {error}
                         </Alert>
+                 
                     ) : (
                         <Row>
                             {products.length > 0 ? (
