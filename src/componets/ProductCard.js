@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const ProductCard = ({ item }) => {
     const navigate = useNavigate();
     const showDetail = (id) => {
-navigate(`/products/${item.id}`);
+        navigate(`/products/${item.id}`);
     };
     return (
         <div onClick={showDetail} className={item?.choice === true ? 'product-card' : 'product-card hidden'}>

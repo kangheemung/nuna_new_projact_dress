@@ -1,49 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Alert } from 'react-bootstrap';
-import ProductCard from './ProductCard';
+import ProductCard from '../componets/ProductCard'; // Check for correct path here
 import { useSearchParams } from 'react-router-dom';
+import { productAction } from '../redux/actions/productAction';
+import { useDispatch, useSelector } from 'react-redux';
 
 const ProductAll = () => {
-    const [products, setProducts] = useState([]);
-    const [query, setquery] = useSearchParams();
-
+    const products = useSelector((state) => state.products);
+    const [query, setQuery] = useSearchParams();
     let [error, setError] = useState('');
+    const dispatch = useDispatch();
 
-    const getProducts = async () => {
-        try {
-            let keyword = query.get('q') || '';
-            console.log('쿼리 값은?', keyword);
-            let url = `https://my-json-server.typicode.com/kangheemung/nuna_new_projact_dress/products?q=${keyword}`;
-            let response = await fetch(url);
-            console.log('url', url);
-            if (!response.ok) {
-                throw new Error('Failed to fetch products');
-            }
-            let jsonData = await response.json();
-            let filteredProducts = jsonData.filter((product) =>
-                product.title.toLowerCase().includes(keyword.toLowerCase())
-            );
-
-            if (filteredProducts.length < 1) {
-                if (keyword !== '') {
-                    setError(`No products match '${keyword}'`);
-                } else {
-                    throw new Error('No results found');
-                }
-            }
-            setProducts(filteredProducts);
-        } catch (error) {
-            setError(error.message);
-        }
+    const getProducts = () => {
+        const keyword = query.get('q') || '';
+        dispatch(productAction.resetProducts())
+        dispatch(productAction.getProducts(keyword));
     };
-
     useEffect(() => {
         getProducts();
     }, [query]);
 
-    //카드 가운데 한줄에 4개
-    //반응형
-    console.log(query);
+    useEffect(() => {
+        if (products.length === 0) {
+            if (query.get('q')) {
+                setError(`No products match '${query.get('q')}'`);
+            } else {
+                setError('No results found');
+            }
+        } else {
+            setError(''); // Clear error message if results are found
+        }
+    }, [products, query]);
+
 
     return (
         <div>

@@ -10,7 +10,6 @@ import hamburger from '../img/hamburger.png';
 const Navbar = ({ authenticate, setAuthenticate }) => {
     const MenuList = ['Make', 'H', 'Sale', '아동', 'Products'];
     const [isSearchVisible, setSearchVisible] = useState(false);
-
     const [isSidebarOpen, setSidebarOpen] = useState(false);
     const navigate = useNavigate();
     const toggleSearch = () => {

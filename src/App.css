@@ -1,21 +1,28 @@
-/* Custom CSS */
+
+* {
+  margin: 0;
+}
+
 .App {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  /* Set background color for the main container */
 }
-
-.body {
-  flex: 1; /* Allows the body to grow and fill the available space */
-  display: flex;
-  justify-content: flex-end; /* Aligns content to the bottom */
+.container{
+padding: 10em;
+overflow: hidden; /* Prevent content from overflowing */
+background-color: #fefff2; 
+}
+.products_container{
+  background-color: #fefff2;
 }
 .top_container {
-  background-color: #f1fff9;
-  padding-bottom: 50px;
-  position: fixed; /* Keep top_container fixed at the top of the viewport */
-  width: 100%; /* Make top_container full width */
-  z-index: 999; /* Set a high z-index value to keep it on top */
+background-color: #f1fff9;
+  position: fixed;
+  left: 0;
+  width: 100%;
+padding-bottom: 20px;
 }
 .login_button{
   display: flex;
@@ -140,7 +147,7 @@ margin-top:300px;
   display: flex;
   justify-content: center;
   height: 50px;
-  width: 250px;
+width: 200px;
   border-radius: 15%;
   border: none;
   background-color: #e3fef3;
@@ -159,6 +166,7 @@ margin-top:300px;
   transition: transform 0.2s; /* Add smooth transition effect */
 }
 .login_link{
+
   color: inherit;
   text-decoration: none;
   cursor: pointer;
@@ -168,11 +176,7 @@ margin-top:300px;
   text-decoration: none;
   cursor: pointer;
 }
-.products_container{
-  margin-top: 300px;
-  background-color: rgb(215, 250, 224);
 
-}
 .login_icon{
   width: 16px;
   margin-top: 3px;
@@ -219,7 +223,7 @@ margin-right:18px ;
     display: none;
   }
   .products_container{
-    margin-top: 200px;
+margin-top: 50px;
     }
 .close_button{
     display: flex;
@@ -230,9 +234,16 @@ margin-right:18px ;
     justify-content: flex-end;
     color: white;
 }
+.loge {
+width: 100px;
+margin-left: 50px;
+text-align: center;
+
+}
 .sidebar_box{
 display: none;
   color: inherit;
+
   text-decoration: none;
 background-color : #00FA9A;
   width: 50%;
@@ -243,7 +254,8 @@ background-color : #00FA9A;
   left: 0;
   z-index: 1000;
 }
-.sidebar_text{
+.sidebar_text,
+.login_link{
 text-align: right;
 margin-top: 3em;
   font-size: 26px;
@@ -255,6 +267,10 @@ margin-right: 15px;
   cursor: pointer;
 
 color: white;
+}
+.sidebar_text ul ,
+.sidebar_text a{
+margin-right: 5px;
 }
   .manu-list-containt{
 display:none;
@@ -306,4 +322,3 @@ justify-content: center;
 font-size: 12px;
 }
 }
-

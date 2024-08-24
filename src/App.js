@@ -1,4 +1,5 @@
 import './App.css';
+import { useSelector, useDispatch } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './componets/HomePage';
@@ -9,14 +10,11 @@ import Login from './page/Login';
 import { FaIconName } from 'react-icons/fa';
 import Navbar from './componets/Navbar';
 import PrivateRoute from './route/PrivateRoute';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { fauser } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
     const [authenticate, setAuthenticate] = useState(false);
-    useEffect(() => {
-        console.log('aaa', authenticate);
-    }, [authenticate]);
 
     //로직
     //1.페이지,로그인,상품상세페이지

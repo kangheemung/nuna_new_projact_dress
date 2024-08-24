@@ -1,11 +1,13 @@
 * {
   margin: 0;
-  padding: 0%;
-  border: 0;
-  box-sizing: border-box;
+
 }
 
+
 body {
+  background-color: #00FA9A;
+  margin: 0;
+  padding: 0;
   justify-content: content;
   font-family: Arial, Georgia, Times, "Times New Roman", serif;
   -webkit-font-smoothing: antialiased;
