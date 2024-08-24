@@ -15,6 +15,7 @@ overflow: hidden; /* Prevent content from overflowing */
 background-color: #fefff2; 
 }
 .products_container{
+  margin-top: 15em;
   background-color: #fefff2;
 }
 .fade text-center alert alert-danger show{
