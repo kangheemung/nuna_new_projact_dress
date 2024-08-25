@@ -11,7 +11,7 @@
 }
 .container{
 padding: 10em;
-overflow: hidden; /* Prevent content from overflowing */
+height: 100vh; /* Prevent content from overflowing */
 background-color: #fefff2; 
 }
 .products_container{
@@ -70,12 +70,15 @@ size:30;
   justify-content: center;
   align-items: center;
 }
-.detail_text_box{
+.detail_text_box,
+.detail_text
+{
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   margin-top: 1em;
+
 }
 .col{
   padding: auto;
@@ -88,7 +91,11 @@ size:30;
   padding: 20px;
 }
 .detail_information{
-  margin-top:30em;
+  margin-top:20em;
+  background-color: #fefff2; 
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 .form_button{
   display: flex;
@@ -213,11 +220,7 @@ margin-right:18px ;
 {
   padding: 10px;
 }
-.detail_information{
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
+
   .hamburger{
     display: none;
   }
@@ -231,6 +234,12 @@ margin-right:18px ;
   }
   .products_container{
 margin-top: 50px;
+    }
+    .detail_information{
+      margin-top:10em;
+      display: flex;
+      justify-content: center;
+      text-align: center;
     }
 .close_button{
     display: flex;
