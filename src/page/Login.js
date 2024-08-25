@@ -15,6 +15,7 @@ const Login = ({ setAuthenticate }) => {
         e.preventDefault();
         console.log('login user function issue');
         await dispatch(authenticateAction.login(id, password));
+        setAuthenticate(true);
         navigate('/');
     };
     return (

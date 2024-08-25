@@ -88,7 +88,7 @@ size:30;
   padding: 20px;
 }
 .detail_information{
-  margin-top:5px;
+  margin-top:30em;
 }
 .form_button{
   display: flex;
@@ -303,10 +303,7 @@ margin-bottom: 10px;
 .form_size {
     max-width: 90%; /* Adjust for smaller screens */
 }
-.detail_information{
-  justify-content: center;
-  text-align: center;
-}
+
 
 .hamburger {
   display: block;
