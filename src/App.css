@@ -12,11 +12,11 @@
 .container{
 padding: 10em;
 height: 100vh; /* Prevent content from overflowing */
-background-color: #fefff2; 
+
 }
 .products_container{
   margin-top: 15em;
-  background-color: #fefff2;
+ 
 }
 .fade text-center alert alert-danger show{
   margin-top: 30em;
@@ -138,7 +138,9 @@ font-weight: bolder;
 
 
 .form_container {
-margin-top:300px;
+margin-top:200px;
+background-color: #fefff2;
+height: 100vh; 
   display: flex;
   justify-content: center;
   align-items: center;
