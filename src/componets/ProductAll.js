@@ -6,7 +6,7 @@ import { productAction } from '../redux/actions/productAction';
 import { useDispatch, useSelector } from 'react-redux';
 
 const ProductAll = () => {
-    const products = useSelector((state) => state.products);
+    const products = useSelector((state) => state.product.products);
     const [query, setQuery] = useSearchParams();
     let [error, setError] = useState('');
     const dispatch = useDispatch();
@@ -37,13 +37,10 @@ const ProductAll = () => {
         <div>
             <div className="products_container">
                 <Container>
-                   
                     {error ? (
-                        
                         <Alert variant="danger" className="text-center">
                             {error}
                         </Alert>
-                 
                     ) : (
                         <Row>
                             {products.length > 0 ? (
